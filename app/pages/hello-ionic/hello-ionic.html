@@ -1,0 +1,41 @@
+
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Hello Ionic</ion-title>
+</ion-navbar>
+
+
+<ion-content padding class="getting-started">
+
+  <h3>Ionic 2 ion-slides test</h3>
+
+  <div style="width: 300px">
+    <ion-slides pager [options]="slidesOptions" *ngIf="items.length">
+      <ion-slide *ngFor="#item of items">
+        <div style="border: 1px solid black; height: 150px;">
+          {{ item.name }}
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div style="width: 300px">
+    <ion-slides pager [options]="slidesOptions">
+      <ion-slide *ngFor="#item of items">
+        <div style="border: 1px solid black; height: 150px;">
+          {{ item.name }}
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <p>
+    The first slider should work properly but not the second one (looping is broken)
+    after items are created:
+  </p>
+  <p>
+    <button (click)="onClick()">Create items</button>
+  </p>
+
+</ion-content>
